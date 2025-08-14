@@ -1,17 +1,21 @@
-let tipo = ["Guerreiro", "Mago", "Monge", "Ninja"];
-let idade;
-let nome;
+const prompt = require("prompt-sync")();
+
+let tipo = prompt("Escolha o tipo (Guerreiro, Mago, Monge, Ninja): ");
+let idade = prompt("Idade: ");
+let nome = prompt("Nome: ");
+
 
 function attack (tipo) {
-    if (tipo === "Guerreiro") {
-        return "usou espada";
-    } else if (tipo === "Mago") {
-        return "usou magia";
-    } else if (tipo === "Monge") {
-        return "usou artes marciais";
-    } else if (tipo === "Ninja") {
-        return "usou shuriken";
+    switch (tipo) {
+        case "Guerreiro":
+            return "usou espada";
+        case "Mago":
+            return "usou magia";
+        case "Monge":
+            return "usou artes marciais";
+        case "Ninja":
+            return "usou shuriken";
     }
 }
 
-console.log(attack)
+console.log(attack(tipo));
