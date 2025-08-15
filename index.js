@@ -8,14 +8,25 @@ let nome = prompt("Nome: ");
 function attack (tipo) {
     switch (tipo) {
         case "Guerreiro":
-            return "usou espada";
+            return "usando espada";
         case "Mago":
-            return "usou magia";
+            return "usando magia";
         case "Monge":
-            return "usou artes marciais";
+            return "usando artes marciais";
         case "Ninja":
-            return "usou shuriken";
+            return "usando shuriken";
+        case "guerreiro":
+            return "usando espada";
+        case "mago":
+            return "usando magia";
+        case "monge":
+            return "usando artes marciais";
+        case "ninja":
+            return "usando shuriken";
     }
 }
+[
+    
+]
 
-console.log(attack(tipo));
+console.log(`o ${tipo} chamado ${nome} atacou ${attack(tipo)}`)
