@@ -2,35 +2,23 @@
 const prompt = require('prompt-sync')(); 
 
 let dados = {
-    name: "Asrus",
-    idade: 15,
-    tipo: {
-        0: ["Guerreiro"],
-        1: ["Mago"],
-        2: ["Monge"],
-        3: ["Ninja"]
-    }
+    nome: (prompt("Qual seu nome? ")),
+    idade: Number(prompt("Qual sua idade? "))
 };
 
-// TESTANDO O FOR LOOP
-for(let i in dados.tipo){
-    let [nomesMaiusculos, nomesMinusculos] = dados.tipo[i];
+// DECLARANDO VARIAVEIS
+const nomes = ["Guerreiro", "Mago", "Monge", "Ninja"];
+const ataques = ["usando espada", "usando magia", "usando artes marciais", "usando shurikens"];
+
+
+function attack(atacante){
+    return `o ${nomes[atacante]} ataca usando ${ataques[atacante]}!`;
 }
 
-// MENSAGEM DE ATAQUE UTILIZANDO ESTRUTURA JSON
+const atacante = Number(prompt("Digite 0 para Guerreiro, 1 para Mago, 2 para Monge, 3 para Ninja! : "));
 
-function attack (tipo) {
-    const ataques = {
-        0: "usando espada",
-        1: "usando magia",
-        2: "usando artes marciais",
-        3: "usando shuriken"
-    };
-    return ataques(tipo[select]) || "classe desconhecida";
-};
+console.log(`O Herói chamado ${dados.nome} com ${dados.idade} anos, tem a classe de: ${nomes[atacante]}.`);
+console.log(`${attack(atacante)}`)
 
 
-//FRASE FINAL
-const select = parseInt(prompt("Tipo 0: Guerreiro, 1: Mago, 2: Monge, 3: Ninja. O seu tipo é: "));
-console.log(`O ${dados.tipo[select]} atacou ${attack(tipo)}`);
 
